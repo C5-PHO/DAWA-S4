@@ -29,7 +29,6 @@ Antes de ejecutar este proyecto asegúrate de tener instalado:
 
 ```bash
 git clone https://github.com/C5-PHO/DAWA-S4.git
-cd DAWA-S4/Semana04
 ```
 
 Si prefieres trabajar desde tu entorno local con otra ruta, puedes clonar en cualquier carpeta y luego entrar al proyecto:
@@ -59,31 +58,7 @@ Luego abre tu navegador en:
 
 [http://localhost:3000](http://localhost:3000)
 
-## Estructura del proyecto
 
-```text
-Semana04/
-├── app.js
-├── package.json
-├── README.md
-├── controllers/
-│   ├── gamesController.js
-│   └── mainController.js
-├── routes/
-│   └── mainRoutes.js
-├── views/
-│   ├── about.ejs
-│   ├── admin.ejs
-│   ├── contact.ejs
-│   ├── games.ejs
-│   ├── home.ejs
-│   └── notFound.ejs
-├── public/
-│   └── styles.css
-├── docs/
-│   └── capturas del proyecto
-└── test.js
-```
 
 ## Funcionalidades
 
