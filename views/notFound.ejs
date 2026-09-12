@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <%- include("partials/head", { title }) %>
 </head>
 <body>
-    <main class="container page-content center-align">
-        <div class="card-panel">
-            <i class="large material-icons red-text">error_outline</i>
-            <h1 class="red-text text-darken-2">404 - Página no encontrada</h1>
-            <p class="flow-text">La ruta <strong><%= url %></strong> no existe en este sitio.</p>
-            <a href="/" class="waves-effect waves-light btn blue darken-3">Volver al inicio</a>
-        </div>
+    <%- include("partials/nav", { active: "" }) %>
+
+    <main class="container error-page">
+        <section class="surface error-card">
+            <div class="error-code">404</div>
+            <h1>Página no encontrada</h1>
+            <p>La ruta <strong><%= url %></strong> no existe o fue movida a otra ubicación.</p>
+            <a href="/" class="waves-effect waves-light btn-large"><i class="material-icons left">arrow_back</i>Volver al inicio</a>
+        </section>
     </main>
+
+    <%- include("partials/footer") %>
 </body>
 </html>

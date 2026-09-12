@@ -103,6 +103,10 @@ Las pruebas verifican las rutas principales, el envío de ambos formularios, la 
 
 ![Página de inicio](docs/01-inicio.png)
 
+### Proyecto
+
+![Descripción del proyecto](docs/06-proyecto.png)
+
 ### Contacto
 
 ![Formulario de contacto](docs/02-contacto.png)

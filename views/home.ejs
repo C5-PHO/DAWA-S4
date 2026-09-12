@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <%- include("partials/head", { title }) %>
 </head>
 <body>
-    <nav class="blue darken-3">
-        <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">Semana 04</a>
-            <ul class="right">
-                <li><a href="/about">Acerca de</a></li>
-                <li><a href="/contact">Contacto</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/games">Videojuegos</a></li>
-            </ul>
-        </div>
-    </nav>
+    <%- include("partials/nav", { active: "home" }) %>
 
-    <main class="container page-content">
-        <div class="card-panel center-align">
-            <i class="large material-icons blue-text text-darken-3">web</i>
-            <h1>Bienvenido a la Página de Inicio</h1>
-            <p class="flow-text">Sitio web desarrollado con Express, EJS y Materialize.</p>
-            <a href="/contact" class="waves-effect waves-light btn blue darken-3">Enviar un mensaje</a>
-        </div>
+    <main>
+        <section class="container hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Laboratorio Semana 04</span>
+                <h1>Aplicaciones web que conectan <span>ideas y personas</span></h1>
+                <p class="lead">Una experiencia construida con Express, vistas dinámicas en EJS y componentes Materialize, organizada para crecer con claridad.</p>
+                <div class="hero-actions">
+                    <a href="/games" class="waves-effect waves-light btn-large">Explorar registros<i class="material-icons right">arrow_forward</i></a>
+                    <a href="/contact" class="waves-effect btn-large btn-secondary">Enviar mensaje</a>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Resumen de funcionalidades">
+                <div class="window-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div>
+                <div class="metric-grid">
+                    <div class="metric-card highlight">
+                        <i class="material-icons">hub</i>
+                        <strong>Arquitectura organizada</strong>
+                        <span>Rutas, controladores y vistas conectados con una estructura clara.</span>
+                    </div>
+                    <div class="metric-card">
+                        <i class="material-icons">dynamic_form</i>
+                        <strong>Formularios</strong>
+                        <span>Datos procesados en el servidor.</span>
+                    </div>
+                    <div class="metric-card">
+                        <i class="material-icons">devices</i>
+                        <strong>Responsive</strong>
+                        <span>Diseño adaptable y accesible.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <%- include("partials/footer") %>
 </body>
 </html>

@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <%- include("partials/head", { title }) %>
 </head>
 <body>
-    <nav class="blue darken-3">
-        <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">Semana 04</a>
-            <ul class="right">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/about">Acerca de</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/games">Videojuegos</a></li>
-            </ul>
-        </div>
-    </nav>
+    <%- include("partials/nav", { active: "contact" }) %>
 
     <main class="container page-content">
-        <div class="card-panel">
-            <h1 class="center-align">Formulario de Contacto</h1>
-            <form action="/contact" method="POST">
+        <header class="section-header">
+            <div>
+                <span class="eyebrow">Contacto</span>
+                <h1>Conversemos sobre tu idea</h1>
+                <p class="lead">Completa el formulario y el mensaje quedará disponible en el panel de administración.</p>
+            </div>
+        </header>
+
+        <section class="split-layout">
+            <aside class="info-panel">
+                <span class="eyebrow">Canal directo</span>
+                <h2>Tu mensaje importa</h2>
+                <p>Este formulario demuestra el envío y procesamiento de información entre el navegador y Express.</p>
+                <div class="info-list">
+                    <div class="info-item"><i class="material-icons">verified_user</i><span>Datos procesados de forma local</span></div>
+                    <div class="info-item"><i class="material-icons">bolt</i><span>Respuesta inmediata</span></div>
+                    <div class="info-item"><i class="material-icons">visibility</i><span>Consulta desde administración</span></div>
+                </div>
+            </aside>
+
+            <form class="surface form-card" action="/contact" method="POST">
                 <div class="input-field">
-                    <i class="material-icons prefix">person</i>
-                    <input id="nombre" type="text" name="nombre" required>
-                    <label for="nombre">Nombre</label>
+                    <i class="material-icons prefix">person_outline</i>
+                    <input id="nombre" type="text" name="nombre" autocomplete="name" required>
+                    <label for="nombre">Nombre completo</label>
                 </div>
                 <div class="input-field">
-                    <i class="material-icons prefix">email</i>
-                    <input id="email" type="email" name="email" required>
+                    <i class="material-icons prefix">alternate_email</i>
+                    <input id="email" type="email" name="email" autocomplete="email" required>
                     <label for="email">Correo electrónico</label>
                 </div>
                 <div class="input-field">
-                    <i class="material-icons prefix">message</i>
+                    <i class="material-icons prefix">chat_bubble_outline</i>
                     <textarea id="mensaje" class="materialize-textarea" name="mensaje" required></textarea>
-                    <label for="mensaje">Mensaje</label>
+                    <label for="mensaje">¿En qué podemos ayudarte?</label>
                 </div>
                 <div class="actions">
-                    <button type="submit" class="waves-effect waves-light btn blue darken-3">
-                        <i class="material-icons right">send</i>Enviar
-                    </button>
-                    <a href="/" class="waves-effect waves-light btn grey darken-2">Volver</a>
+                    <button type="submit" class="waves-effect waves-light btn-large">Enviar mensaje<i class="material-icons right">send</i></button>
+                    <a href="/" class="waves-effect btn-large btn-secondary">Cancelar</a>
                 </div>
             </form>
-        </div>
+        </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <%- include("partials/footer") %>
 </body>
 </html>

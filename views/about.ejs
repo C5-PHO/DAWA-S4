@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <%- include("partials/head", { title }) %>
 </head>
 <body>
-    <nav class="blue darken-3">
-        <div class="nav-wrapper container">
-            <a href="/" class="brand-logo">Semana 04</a>
-            <ul class="right">
-                <li class="active"><a href="/about">Acerca de</a></li>
-                <li><a href="/contact">Contacto</a></li>
-                <li><a href="/admin">Admin</a></li>
-                <li><a href="/games">Videojuegos</a></li>
-            </ul>
-        </div>
-    </nav>
+    <%- include("partials/nav", { active: "about" }) %>
 
     <main class="container page-content">
-        <div class="card-panel">
-            <h1 class="center-align">Sobre Nosotros</h1>
-            <p class="flow-text center-align">Esta aplicación demuestra el uso de rutas, controladores, vistas EJS y registros almacenados en memoria.</p>
-            <div class="center-align">
-                <a href="/" class="waves-effect waves-light btn grey darken-2">Volver al inicio</a>
+        <header class="section-header">
+            <div>
+                <span class="eyebrow">Acerca del proyecto</span>
+                <h1>Una base sólida para aplicaciones dinámicas</h1>
+                <p class="lead">El laboratorio integra las piezas esenciales de una aplicación web del lado del servidor mediante una estructura fácil de comprender y mantener.</p>
             </div>
-        </div>
+        </header>
+
+        <section class="feature-grid" aria-label="Características técnicas">
+            <article class="surface feature-card">
+                <span class="icon-box"><i class="material-icons">route</i></span>
+                <h3>Rutas expresivas</h3>
+                <p>Cada dirección conecta una acción concreta con su controlador correspondiente.</p>
+            </article>
+            <article class="surface feature-card">
+                <span class="icon-box"><i class="material-icons">code</i></span>
+                <h3>Vistas dinámicas</h3>
+                <p>EJS transforma los datos del servidor en interfaces claras y reutilizables.</p>
+            </article>
+            <article class="surface feature-card">
+                <span class="icon-box"><i class="material-icons">storage</i></span>
+                <h3>Datos en memoria</h3>
+                <p>Los registros permiten practicar el flujo completo antes de integrar una base de datos.</p>
+            </article>
+        </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <%- include("partials/footer") %>
 </body>
 </html>
