@@ -1,13 +1,37 @@
-const home =  (req, res) => {
-    res.render("home", { title: "Inicio" });
-  };
+// "Base de datos" en memoria para los mensajes enviados.
+const messages = [];
+
+const home = (req, res) => {
+  res.render("home", { title: "Inicio" });
+};
 
 const about = (req, res) => {
-    res.render("about", { title: "Acerca de" });
-  };
+  res.render("about", { title: "Acerca de" });
+};
+
+const contact = (req, res) => {
+  res.render("contact", { title: "Contacto" });
+};
+
+const saveContact = (req, res) => {
+  const { nombre, email, mensaje } = req.body;
+
+  messages.push({ nombre, email, mensaje });
+  console.log("Nuevo mensaje de contacto:", { nombre, email, mensaje });
+
+  res.redirect("/admin");
+};
+
+const admin = (req, res) => {
+  res.render("admin", { title: "Administración", messages });
+};
 
 const mainController = {
-  home, about
+  home,
+  about,
+  contact,
+  saveContact,
+  admin,
 };
 
 module.exports = mainController;
